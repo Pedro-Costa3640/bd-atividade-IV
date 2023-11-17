@@ -37,7 +37,7 @@ BEGIN
     -- Verifica se a quantidade em estoque é suficiente
     IF estoque_disponivel < NEW.Quantidade THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Produto está fora de estoque. Quantidade disponível: ' || CAST(estoque_disponivel AS CHAR);
+        SET MESSAGE_TEXT = 'Produto está fora de estoque.';
     END IF;
 END;
 
