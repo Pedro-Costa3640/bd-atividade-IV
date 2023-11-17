@@ -36,9 +36,9 @@ BEGIN
 
     -- Verifica se a quantidade em estoque é suficiente
     IF estoque_disponivel < NEW.Quantidade THEN
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Produto está fora de estoque.';
-    END IF;
+		SIGNAL SQLSTATE '45000'
+		SET MESSAGE_TEXT = 'Produto está fora de estoque.' ;
+	END IF;
 END;
 
 //
@@ -58,3 +58,5 @@ insert into Itens_venda (Id_venda, Id_produto, Quantidade)
 values (1, 1, 25);
 
 select * from Produtos;
+
+drop database Atv4_2;
